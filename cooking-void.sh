@@ -8,7 +8,7 @@
 cd $HOME
 uid = $(id -u)
 if [[ uid == 0 ]]; then
-	echo "Woah! You forgot you were root!"
+	echo "Woah! You forgot that you were root!"
 	exit 1
 fi
 
