@@ -1,4 +1,6 @@
 # .files
+![Screenshot of Desktop](wall.jpg)
+
 These are my configuration files for my Linux setup.
 The configuration files will work on any distribution; however, there is a bootstrap file that only works on `VOID LINUX GLIB`.
 The bootstrap file installs a suite of programs and does not give any prompts to choose otherwise as it is mainly for personal use.
@@ -38,6 +40,6 @@ st
 
 ## .references
 I've included the places that I received my content from to give credit and aid if you want to potentially change something using documentation.  
-* ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ).
+* ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ/st).
 * [Nord](https://github.com/arcticicestudio/nord) for colors.
 * Current wallpaper is created by [Max028](http://fav.me/db5byph) on deviantArt.
