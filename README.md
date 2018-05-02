@@ -5,15 +5,15 @@ The bootstrap file installs a suite of programs and does not give any prompts to
 If you wish to utilize the bootstrap file, the commands are quite simple to change.
 
 ## .my-info
-**distro:** Void Linux *glibc*
-**wm:** i3-gaps
-**terminal:** st + zsh
-**font:** tewi2a
-**editor:** vim & atom
-**color-scheme:** Nord
-**notifications:** dunst
-**web:** firefox *alt: qutebrowser/chromium*
-**launcher:** dmenu
+* **distro:** Void Linux *glibc*
+* **wm:** i3-gaps
+* **terminal:** st + zsh
+* **font:** tewi2a
+* **editor:** vim & atom
+* **color-scheme:** Nord
+* **notifications:** dunst
+* **web:** firefox *alt: qutebrowser/chromium*
+* **launcher:** dmenu
 
 ## .installer
 The bootstrap file installs the following:
