@@ -38,5 +38,7 @@ I'll probably finish it later.
 Probably others, repo is not even working so *shrug*
 
 ## .references
-ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ)
-[Nord](https://github.com/arcticicestudio/nord) for colors.
+I've included the places that I received my content from to give credit and aid if you want to potentially change something using documentation.  
+ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ).  
+[Nord](https://github.com/arcticicestudio/nord) for colors. 
+Current wallpaper is created by [Max028](http://fav.me/db5byph) on deviantArt. 
