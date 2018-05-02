@@ -23,10 +23,14 @@ polybar
 ncmpcpp
 vim
 R (rmarkdown baby)
-texlive (NON-DISTRO PROVIDED)
 unclutter
 dmenu (Used to rofi, but I like the unix philosophy of suckless; plus it goes over polybar)
 tewi-font
+
+PROMPT FOR ADDITIONAL PACKAGES
+texlive (build version)
+atom
+st
 ```
 Ranger, with w3m image previewer (to-do)
 ST (my terminal) is not provided due to the necessity of requiring a custom build.
@@ -34,5 +38,5 @@ I'll probably finish it later.
 Probably others, repo is not even working so *shrug*
 
 ## .references
-st build provided by Luke Smith
-everything else is pretty much documentation and examples
+ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ)
+[Nord](https://github.com/arcticicestudio/nord) for colors.
