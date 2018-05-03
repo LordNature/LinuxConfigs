@@ -13,7 +13,7 @@ printf "Time to cook!\n"
 printf "This won't install graphics btw.\n"
 for i in {10..0}; do
 	sleep 1
-	prinf "We are cooking in $sec seconds..."
+	printf "We are cooking in $sec seconds..."
 done
 printf "\n"
 
