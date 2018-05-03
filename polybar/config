@@ -39,7 +39,7 @@ font-0 = Inconsolata:size=11;
 font-1 = fontawesome:size=11;
 
 modules-left = i3
-modules-middle = mpd
+modules-center = mpd
 modules-right = volume battery memory cpu wlan date
 tray-position = right
 tray-padding = 2
@@ -136,13 +136,19 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
+host = 0.0.0.0
+port = 6600
+interval = 2
+label-song = %artist% - %title%
+label-offline = mpd: offline
+
 icon-prev = 
 icon-stop = 
 icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 25
+label-song-maxlen = 40
 label-song-ellipsis = true
 
 [module/xbacklight]
