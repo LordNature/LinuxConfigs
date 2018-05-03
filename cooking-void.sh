@@ -5,6 +5,16 @@ i=`tput setaf 1`
 e="$(tput sgr0)\n"
 printf "${t}LordNature's .files${e}"
 
+function yn() {
+	printf "${i}Do you wish to install ${1}?${e}"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes ) return 1;;
+			No ) return 0;;
+		esac
+	done
+}
+
 cd $HOME
 uid=`id -u`
 if [[ $uid == 0 ]]; then
@@ -46,21 +56,16 @@ if [ ! -d "${HOME}/temp/" ] ; then
 fi
 
 printf "${t}Spices: Install Discord...${e}"
-if [ ! -d "${HOME}/void-packages" ] ; then
+if [ ! -d "${HOME}/void-packages" ]; then
 	cd $HOME
 	sudo xbps-install xtools
-	printf "${i}Do you wish to install Discord?${e}"
-	select yn in "Yes" "No"; do
-		case $yn in
-			Yes ) 
-				git clone https://github.com/voidlinux/void-packages
-				cd void-packages
-				./xbps-src binary-bootstrap
-				./xbps-src pkg discord
-				sudo xi -y discord; break;;
-			No ) exit;;
-		esac
-	done
+	if [[ $(yn "Discord") == "n" ]]; then
+		git clone https://github.com/voidlinux/void-packages
+		cd void-packages
+		./xbps-src binary-bootstrap
+		./xbps-src pkg discord
+		sudo xi -y discord	
+	fi
 fi
 
 printf "${t}Decorations: Getting your favorite eye candy ready...${e}"
