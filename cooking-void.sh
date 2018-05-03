@@ -71,15 +71,17 @@ sudo xbps-remove -y xorg-fonts
 sudo xbps-install -y tewi-font google-fonts-ttf freefont-ttf
 
 printf "${t}Decorations: Symlinking the links of links O_O...${e}"
-ln -si $dir/.Xresources $HOME/.Xresources
-ln -si $dir/.xinitrc $HOME/.xinitrc
-ln -si $dir/.zshrc $HOME/.zshrc
-ln -si $dir/i3 $HOME/.config
-ln -si $dir/polybar $HOME/.config
-ln -si $dir/.fehbg $HOME/.fehbg
-# ln -si $dir/bin $HOME/bin
-# Disabled for now because I change it a lot.
-# ln -si $dir/wall.jpg $HOME/.config/wall.jpg
+if [[ $(yn "symlinks") ]]; then
+	ln -s $dir/.Xresources $HOME/.Xresources
+	ln -s $dir/.xinitrc $HOME/.xinitrc
+	ln -s $dir/.zshrc $HOME/.zshrc
+	ln -s $dir/i3 $HOME/.config
+	ln -s $dir/polybar $HOME/.config
+	ln -s $dir/.fehbg $HOME/.fehbg
+	# ln -si $dir/bin $HOME/bin
+	# Disabled for now because I change it a lot.
+	# ln -si $dir/wall.jpg $HOME/.config/wall.jpg
+fi
 
 printf "${t}Wrap it all together and make it clean...${e}"
 sudo xbps-remove -oy
