@@ -3,6 +3,7 @@ clear
 t=`tput setaf 4`
 i=`tput setaf 1`
 e="$(tput sgr0)\n"
+dir=`pwd`
 printf "${t}LordNature's .files${e}"
 
 function yn() {
@@ -28,8 +29,6 @@ for sec in {5..0}; do
 done
 printf "\n"
 
-dir=`pwd`
-
 printf "${t}All your passwords belong to us.${e}"
 sudo printf "${i}You fool! Ha! I've got your password now. /s${e}"
 sleep 5
@@ -43,15 +42,26 @@ sudo xbps-install -y i3-gaps dmenu polybar firefox htop git automake autoconf ma
 printf "${t}Spices: Install st terminal...${e}"
 sudo xbps-remove -Ry st
 sudo xbps-install -y st-terminfo gcc libXft-devel fontconfig-devel pkg-config
+mkdir -p $HOME/temp
 
-if [ ! -d "${HOME}/temp/" ] ; then
-	mkdir -p $HOME/temp
-	cd $HOME/temp
-	git clone https://github.com/LukeSmithXYZ/st.git
-	cd st
-	cp $dir/config.h $HOME/temp/st
-	make
-	sudo make install
+if [ ! -d "/usr/local/bin/st" ]; then
+	if [[ $(yn "st") == "y" ]]; then
+		cd $HOME/temp
+		git clone https://github.com/LukeSmithXYZ/st.git
+		cd st
+		cp $dir/config.h $HOME/temp/st
+		make
+		sudo make install
+	fi
+else
+	if [[ $(yn "st again") == "y" ]]; then
+		cd $HOME/temp
+		git clone https://github.com/LukeSmithXYZ/st.git
+		cd st
+		cp $dir/config.h $HOME/temp/st
+		make
+		sudo make install
+	fi
 fi
 
 printf "${t}Spices: Install Discord...${e}"
@@ -75,8 +85,8 @@ printf "${t}Decorations: Symlinking the links of links O_O...${e}"
 ln -si $dir/.Xresources $HOME/.Xresources
 ln -si $dir/.xinitrc $HOME/.xinitrc
 ln -si $dir/.zshrc $HOME/.zshrc
-ln -si $dir/i3 $HOME/.config/i3
-ln -si $dir/polybar $HOME/.config/polybar
+ln -si $dir/i3 $HOME/.config
+ln -si $dir/polybar $HOME/.config
 ln -si $dir/.fehbg $HOME/.fehbg
 # ln -si $dir/bin $HOME/bin
 # Disabled for now because I change it a lot.

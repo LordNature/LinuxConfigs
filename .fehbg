@@ -1,2 +1,2 @@
 #!/bin/sh
-'feh' '--bg-scale' '/home/nature/.config/wall.jpg'
+'feh' '--bg-scale' '/home/nature/.config/wall.jpg' 
