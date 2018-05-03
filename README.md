@@ -5,7 +5,7 @@ These are my configuration files for my Linux setup.
 The configuration files will work on any distribution; however, there is a bootstrap file that only works on `VOID LINUX GLIB`.
 The bootstrap file installs a suite of programs and does not give any prompts to choose otherwise as it is mainly for personal use.
 If you wish to utilize the ~bootstrap~ cooking file, the commands are quite simple to change.
-Make sure you listen to [this](youtu.be/ZD71JeX4Vk0) while installing.
+Make sure you listen to [this](https://youtu.be/ZD71JeX4Vk0) while installing.
 
 ## .my-recipe
 * **distro:** Void Linux *glibc*
