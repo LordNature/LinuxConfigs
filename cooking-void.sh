@@ -6,13 +6,11 @@ e="$(tput sgr0)\n"
 printf "${t}LordNature's .files${e}"
 
 function yn() {
-	printf "${i}Do you wish to install ${1}?${e}"
-	select yn in "Yes" "No"; do
-		case $yn in
-			Yes ) return 1;;
-			No ) return 0;;
-		esac
-	done
+	read -p "${i}Do you wish to install ${1}? $(tput sgr0)"
+	case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
+		y|yes) echo "y";;
+		*) echo "n";;
+	esac
 }
 
 cd $HOME
@@ -59,7 +57,7 @@ printf "${t}Spices: Install Discord...${e}"
 if [ ! -d "${HOME}/void-packages" ]; then
 	cd $HOME
 	sudo xbps-install xtools
-	if [[ $(yn "Discord") == "n" ]]; then
+	if [[ $(yn "Discord") == "y" ]]; then
 		git clone https://github.com/voidlinux/void-packages
 		cd void-packages
 		./xbps-src binary-bootstrap
