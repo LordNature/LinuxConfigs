@@ -21,7 +21,6 @@ done
 printf "\n"
 
 dir=`pwd`
-mkdir -p $HOME/temp
 
 printf "${t}All your passwords belong to us.${e}"
 sudo printf "${i}You fool! Ha! I've got your password now. /s${e}"
@@ -36,13 +35,18 @@ sudo xbps-install -y i3-gaps dmenu polybar firefox htop git automake autoconf ma
 printf "${t}Spices: Install st terminal...${e}"
 sudo xbps-remove -Ry st
 sudo xbps-install -y gcc libXft-devel fontconfig-devel pkg-config
-cd $HOME/temp
-git clone https://github.com/LukeSmithXYZ/st.git
-cd st
-make
-sudo make install
+
+if [ ! -d "${HOME}/temp/" ] ; then
+	mkdir -p $HOME/temp
+	cd $HOME/temp
+	git clone https://github.com/LukeSmithXYZ/st.git
+	cd st
+	make
+	sudo make install
+fi
 
 printf "${t}Spices: Install Discord...${e}"
+cd $HOME
 sudo xbps-install xtools
 git clone https://github.com/voidlinux/void-packages
 cd void-packages
@@ -56,10 +60,12 @@ sudo xbps-install -y tewi-font google-fonts-ttf freefont-ttf
 
 printf "${t}Decorations: Symlinking the links of links O_O...${e}"
 ln -si $dir/.Xresources $HOME/.Xresources
+ln -si $dir/.xinitrc $HOME/.xinitrc
 ln -si $dir/.zshrc $HOME/.zshrc
 ln -si $dir/i3 $HOME/.config/i3
+ln -si $dir/polybar $HOME/.config/polybar
 ln -si $dir/.fehbg $HOME/.fehbg
-ln -si $dir/bin $HOME/bin
+# ln -si $dir/bin $HOME/bin
 # Disabled for now because I change it a lot.
 # ln -si $dir/wall.jpg $HOME/.config/wall.jpg
 
