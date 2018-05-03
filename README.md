@@ -43,4 +43,5 @@ To-do:
 I've included the places that I received my content from to give credit and aid if you want to potentially change something using documentation.  
 * ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ/st).
 * [Nord](https://github.com/arcticicestudio/nord) for colors.
+* [Man coloration](http://www.tuxarena.com/2012/04/tutorial-colored-man-pages-how-it-works/)
 * Current wallpaper is created by [Max028](http://fav.me/db5byph) on deviantArt.
