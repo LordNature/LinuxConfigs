@@ -44,7 +44,7 @@ sudo xbps-remove -Ry st
 sudo xbps-install -y st-terminfo gcc libXft-devel fontconfig-devel pkg-config
 mkdir -p $HOME/temp
 
-if [ ! -d "/usr/local/bin/st" ]; then
+if [ -d "/usr/local/bin/st" ]; then
 	if [[ $(yn "st") == "y" ]]; then
 		cd $HOME/temp
 		git clone https://github.com/LukeSmithXYZ/st.git
