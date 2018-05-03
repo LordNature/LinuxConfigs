@@ -14,7 +14,7 @@ fi
 
 printf "Time to cook!\n"
 printf "This won't install graphics btw.\n"
-for sec in {10..0}; do
+for sec in {5..0}; do
 	sleep 1
 	printf "${i}We are cooking in $sec seconds...${e}"
 done
@@ -46,13 +46,22 @@ if [ ! -d "${HOME}/temp/" ] ; then
 fi
 
 printf "${t}Spices: Install Discord...${e}"
-cd $HOME
-sudo xbps-install xtools
-git clone https://github.com/voidlinux/void-packages
-cd void-packages
-./xbps-src binary-bootstrap
-./xbps-src pkg discord
-sudo xi -y discord
+if [ ! -d "${HOME}/void-packages" ] ; then
+	cd $HOME
+	sudo xbps-install xtools
+	printf "${i}Do you wish to install Discord?${e}"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes ) 
+				git clone https://github.com/voidlinux/void-packages
+				cd void-packages
+				./xbps-src binary-bootstrap
+				./xbps-src pkg discord
+				sudo xi -y discord; break;;
+			No ) exit;;
+		esac
+	done
+fi
 
 printf "${t}Decorations: Getting your favorite eye candy ready...${e}"
 sudo xbps-remove -y xorg-fonts
