@@ -23,8 +23,9 @@ printf "\n"
 dir=`pwd`
 mkdir -p $HOME/temp
 
-printf "All your passwords belong to us.\n"
-sudo printf "You fool! Ha! I've got your password now.\n"
+printf "${t}All your passwords belong to us.${e}"
+sudo printf "${i}You fool! Ha! I've got your password now. /s${e}"
+sleep 5
 
 printf "${t}Preperation: Let's fetch those updates!${e}"
 sudo xbps-install -Syu
