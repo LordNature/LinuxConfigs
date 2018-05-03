@@ -1,5 +1,5 @@
 # .files
-![Screenshot of Desktop](wall.jpg)
+![Screenshot of Desktop](screeny.jpg)
 
 These are my configuration files for my Linux setup.
 The configuration files will work on any distribution; however, there is a bootstrap file that only works on `VOID LINUX GLIB`.
