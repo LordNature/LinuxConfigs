@@ -1,106 +1,153 @@
 # vim: filetype=i3
 
 #########################
-# Christian's i3 Config #
+# LordNature's i3 THEME #
 #########################
 ## GITHUB:  LordNature ##
 ## KEYBASE: LordNature ##
 #########################
-
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0
-gaps inner 5
-gaps outer 10
-font pango:tewi2a 9
-
-set $mod Mod4
 set $m Mod4
 
-exec --no-startup-id unclutter
-exec_always --no-startup-id killall -q polybar; polybar top
-exec --no-startup-id ~/.fehbg
-# This is bad practice dont do it v
-exec --no-startup-id sudo nm-applet &
-exec --no-startup-id compton
-#exec --no-startup-id pcmanfm -d &
+# Workspaces
+set $w1 "1"
+set $w2 "2"
+set $w3 "3"
+set $w4 "4"
+set $w5 "5"
+set $w6 "6"
+set $w7 "7"
+set $w8 "8"
+set $w9 "9"
+set $w0 "10"
 
+# i3-gaps
+for_window [class=^.*"] border pixel 2
+gaps inner 10
+gaps outer 10
+new_window  none
+new_float pixel 0
+hide_edge_borders both
+
+# Monitors
+## On Laptop it shouldn't matter
+set $m1 "DVI-D-0"
+set $m2 "VGA1"
+workspace $w1 output $m1
+workspace $w2 output $m1
+workspace $w3 output $m1
+workspace $w4 output $m1
+workspace $w5 output $m2
+workspace $w6 output $m1
+workspace $w7 output $m1
+workspace $w8 output $m1
+workspace $w9 output $m1
+workspace $w0 output $m1
+
+# Keybinds
+bindsym $m+1 workspace $w1
+bindsym $m+2 workspace $w2
+bindsym $m+3 workspace $w3
+bindsym $m+4 workspace $w4
+bindsym $m+5 workspace $w5
+bindsym $m+6 workspace $w6
+bindsym $m+7 workspace $w7
+bindsym $m+8 workspace $w8
+bindsym $m+9 workspace $w9
+bindsym $m+0 workspace $w0
+bindsym $m+Shift+1 move container to workspace $w1
+bindsym $m+Shift+2 move container to workspace $w2
+bindsym $m+Shift+3 move container to workspace $w3
+bindsym $m+Shift+4 move container to workspace $w4
+bindsym $m+Shift+5 move container to workspace $w5
+bindsym $m+Shift+6 move container to workspace $w6
+bindsym $m+Shift+7 move container to workspace $w7
+bindsym $m+Shift+8 move container to workspace $w8
+bindsym $m+Shift+9 move container to workspace $w9
+bindsym $m+Shift+0 move container to workspace $w0
+bindsym $m+r mode "resize"
+mode "Resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	bindsym Escape mode "default"
+}
+
+bindsym $m+Shift+t reload
+bindsym $m+Shift+r restart
+bindsym $m+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+floating_modifier $m
+bindsym $m+h focus left
+bindsym $m+j focus down
+bindsym $m+k focus up
+bindsym $m+l focus right
+bindsym $m+Shift+h move left
+bindsym $m+Shift+j move down
+bindsym $m+Shift+k move up
+bindsym $m+Shift+l move right
+
+# Layouts
+bindsym $m+s layout stacking
+bindsym $m+w layout tabbed
+bindsym $m+e layout toggle split
+bindsym $m+b split h
+bindsym $m+v split v
+bindsym $m+f fullscreen
+bindsym $m+space focus mode_toggle
+bindsym $m+Shift+space floating toggle
+bindsym $m+a focus parent
+bindsym $m+Shift+s sticky toggle
+bindsym $m+Shift+q kill
+
+# Important Keybinds
+bindsym $m+d exec dmenu_run
+bindsym $m+Return exec st
+bindsym $m+Shift+b border toggle
+bindsym Control+Mod1+Delete exec st -e htop -r htop
 bindsym XF86AudioMute exec amixer set Master Toggle
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym $m+Shift+minus exec xbacklight -dec 5
 bindsym $m+Shift+plus exec xbacklight -inc 5
-#bindsym XF86AudioPlay
-#bindsym XF86AudioStop
-#bindsym XF86AudioPrev
-#bindsym XF86AudioNext
 
-floating_modifier $mod
-bindsym $mod+Return exec st
-bindsym $mod+Shift+q kill
-bindsym $mod+d exec dmenu_run
+# Assigning
+assign [class="firefox"] $w1
+assign [class="Steam"] $w4
+assign [class="discord"] $w5
+assign [class="factorio"] $w0
+assign [class="csgo_linux64"] $w0
+assign [class="starbound"] $w0
+assign [title=".+ \- OpenGL"] $w0
+assign [class="PA"] $w0
+assign [title="Unturned"] $w0
+assign [class="RocketLeague"] $w0
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="htop"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [title=".+ \- Chat$"] floating enable
+for_window [title=".+ \- event started$"] floating enable
 
-## CONSOLE
+# Steam Floating
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+
+# Programs
+exec_always --no-startup-id killall -q polybar; polybar top
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id compton
+exec --no-startup-id unclutter
+#exec --no-startup-id mpv ~/anibg.mp4 --no-audio --loop --no-input-default-bindings --no-osc --title="MPV Wallpaper" --wid=0 --panscan=1.0 --hwdec=vdpau
+
+# CONSOLE
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id st -n dropdown 
-bind $mod+grave [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bind $m+grave [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-bindsym $mod+c split h 
-bindsym $mod+v split v
-bindsym $mod+f fullscreen toggle
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
-
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
