@@ -42,13 +42,14 @@ sudo xbps-install -y i3-gaps dmenu polybar firefox htop git automake autoconf ma
 
 printf "${t}Spices: Install st terminal...${e}"
 sudo xbps-remove -Ry st
-sudo xbps-install -y gcc libXft-devel fontconfig-devel pkg-config
+sudo xbps-install -y st-terminfo gcc libXft-devel fontconfig-devel pkg-config
 
 if [ ! -d "${HOME}/temp/" ] ; then
 	mkdir -p $HOME/temp
 	cd $HOME/temp
 	git clone https://github.com/LukeSmithXYZ/st.git
 	cd st
+	cp $dir/config.h $HOME/temp/st
 	make
 	sudo make install
 fi
