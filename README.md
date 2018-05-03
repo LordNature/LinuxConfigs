@@ -4,9 +4,9 @@
 These are my configuration files for my Linux setup.
 The configuration files will work on any distribution; however, there is a bootstrap file that only works on `VOID LINUX GLIB`.
 The bootstrap file installs a suite of programs and does not give any prompts to choose otherwise as it is mainly for personal use.
-If you wish to utilize the bootstrap file, the commands are quite simple to change.
+If you wish to utilize the ~bootstrap~ cooking file, the commands are quite simple to change.
 
-## .my-info
+## .my-recipe
 * **distro:** Void Linux *glibc*
 * **wm:** i3-gaps
 * **terminal:** st + zsh
@@ -18,25 +18,25 @@ If you wish to utilize the bootstrap file, the commands are quite simple to chan
 * **launcher:** dmenu
 
 ## .installer
-The bootstrap file installs the following:
+The chef uses the following ingredients:
 ```
-i3-gaps or BSPWM (Going to try BSPWM in a bit)
-polybar
-ncmpcpp
-vim
-R (rmarkdown baby)
-unclutter
-dmenu (Used to rofi, but I like the unix philosophy of suckless; plus it goes over polybar)
-tewi-font
+i3-gaps, dmenu, polybar, htop
+firefox, ffmpeg
+git, automake, autoconf, make, unzip
+feh, compton
+R, vim
 
-PROMPT FOR ADDITIONAL PACKAGES
-texlive (build version)
-atom
+sauces:
 st
+tewi-font, google-fonts-ttf, freefont-ttf
 ```
+To-do:
 * Ranger, with w3m image previewer (to-do)
-* ST (my terminal) is not provided due to the necessity of requiring a custom build.
-* I'll probably finish it later. Probably others, repo is not even working so *shrug*
+* bspwm if I like it.
+* Maybe add old Rofi configs
+* Add arc-theme; don't really GTK that much doe
+* Randomize wallpaper; prob not
+* Add texlive, atom, dmenu custom build, st custom build w/ Nord colors 
 
 ## .references
 I've included the places that I received my content from to give credit and aid if you want to potentially change something using documentation.  

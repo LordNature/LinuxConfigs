@@ -27,12 +27,11 @@ printf "Preperation: Let's fetch those updates!"
 sudo xbps-install -Syu
 
 printf "Ingredients: Time to add the applications..."
-sudo xbps-install -y i3-gaps dmenu polybar firefox htop git automake autoconf make ffmpeg unzip unclutter feh compton R
+sudo xbps-install -y i3-gaps dmenu polybar firefox htop git automake autoconf make ffmpeg unzip unclutter feh compton R vim
 
 printf "Spices: Install st terminal..."
 sudo xbps-install -y gcc libXft-devel fontconfig-devel pkg-config
 cd $HOME/temp
-# To-do: Make own patch for Nord colors
 git clone https://github.com/LukeSmithXYZ/st.git
 cd st
 make
@@ -49,7 +48,6 @@ sudo xi -y discord
 printf "Decorations: Getting your favorite eye candy ready..."
 sudo xbps-remove -y xorg-fonts
 sudo xbps-install -y tewi-font google-fonts-ttf freefont-ttf
-# Add arc-theme in future; don't care for it now as no gtk applications *shrug*
 
 printf "Decorations: Symlinking the links of links O_O..."
 ln -si $dir/.Xresources $HOME/.Xresources
@@ -57,14 +55,12 @@ ln -si $dir/.zshrc $HOME/.zshrc
 ln -si $dir/i3 $HOME/.config/i3
 ln -si $dir/.fehbg $HOME/.fehbg
 ln -si $dir/bin $HOME/bin
-# I'll probably randomize this at some point based on Months. aka every 30 days change
 # Disabled for now because I change it a lot.
 # ln -si $dir/wall.jpg $HOME/.config/wall.jpg
 
 printf "Wrap it all together and make it clean..."
 sudo xbps-remove -oy
 rm -rf $HOME/temp
-# To-do: Add texlive, atom, dmenu build with Nord colors
 
 printf "Ding ding! It's complete!"
 sleep 3
