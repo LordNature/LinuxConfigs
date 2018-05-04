@@ -18,6 +18,7 @@ COMPLETION_WAITING_DOTS="true"
 alias epoch="date +%s" # You'd be suprised
 alias nvim="vim" # I'm forgetful
 alias sl="ls" # Typos my dude
+alias xu="sudo xbps-install -Syu"
 alias vpn="cd /etc/openvpn;sudo openvpn mullvad_us-ga.conf" # To-do: Make a script that allows me to choose from different servers
 alias vpnon="wg-quick up mullvad-us4"
 alias vpnoff="wg-quick down mullvad-us4"
