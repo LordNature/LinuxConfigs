@@ -44,4 +44,5 @@ I've included the places that I received my content from to give credit and aid 
 * ST build provided by [Luke Smith](https://github.com/LukeSmithXYZ/st).
 * [Nord](https://github.com/arcticicestudio/nord) for colors.
 * [Man coloration](http://www.tuxarena.com/2012/04/tutorial-colored-man-pages-how-it-works/)
+* Steam theme forked from [Unofficial Metro Patch](https://github.com/redsigma/UPMetroSkin). A lot of styling changes though.
 * Current wallpaper is created by [Max028](http://fav.me/db5byph) on deviantArt.

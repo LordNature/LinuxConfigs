@@ -3,9 +3,11 @@
 ; https://github.com/CompletelyGeneric/dotfiles
 
 [colors]
-background = #5E81AC
+;background = #5E81AC
+background = #3B4252
 background-alt = #444
-background-desktop = #3B4252 
+;background-desktop = #3B4252 
+background-desktop = #81A1C1
 background-battery-nord = #81A1C1
 background-wlan-nord = #BF616A 
 background-cpu-nord = #D08770 
