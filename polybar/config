@@ -1,12 +1,10 @@
 ; polybar
-; built from a config by completegeneric
-; https://github.com/CompletelyGeneric/dotfiles
+; modified from https://github.com/CompletelyGeneric/dotfiles
 
 [colors]
 ;background = #5E81AC
 background = #3B4252
 background-alt = #444
-;background-desktop = #3B4252 
 background-desktop = #81A1C1
 background-battery-nord = #81A1C1
 background-wlan-nord = #BF616A 
@@ -270,11 +268,13 @@ format-volume-suffix-background = ${colors.background-volume-nord}
 format-muted-suffix-background = ${colors.background-volume-nord}
 format-muted-prefix-background = ${colors.background-volume-nord}
 label-muted =   %percentage% 
+label-muted-background= ${colors.background-volume-nord}
 format-muted = <label-muted>
+
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = AC
+battery = BAT0
+adapter = ADP1
 full-at = 100
 background = ${colors.background-battery-nord}
 format-charging-suffix= ${hacks.module-margin}
