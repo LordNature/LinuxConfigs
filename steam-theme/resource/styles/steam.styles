@@ -1,10 +1,6 @@
 steam.styles
 {
 	include "custom.styles"
-
-	include "resource/styles/windows.styles" [$WIN32||$WINDOWS]
-	include "resource/styles/debian.styles" [$OSX||$LINUX]
-
 	include "controls.styles"
 	include "UI.styles"
 	include "caption.styles"
@@ -33,6 +29,7 @@ steam.styles
 			textcolor=white
 			font-family=semilight
 			font-weight=300
+			font-size=28
 		}
 		CSystemInfoDialog
 		{
@@ -191,6 +188,7 @@ steam.styles
 			inset="0 0 0 0"
 			textcolor="White50"
 			font-weight=400
+			font-size=16
 		}
 
 ///////////////////////////////////////////////
@@ -201,6 +199,7 @@ steam.styles
 			textcolor="White"
 			font-family=semibold
 			font-style="uppercase"
+			font-size=16
 			render_bg {}
 		}
 
@@ -465,23 +464,23 @@ steam.styles
 		ListPanel
 		{
 			textcolor="White50"
-			selectedtextcolor="White"
+			selectedtextcolor="White50"
 			shadowtextcolor="White50"	// the color of disabled line items
 			font-family=basefont
+			font-size=16
 			font-weight=400
-			padding-left=8
+			padding-left=5
+			padding-right=5
 			selectedbgcolor="Focus"
 			render_bg {}
 			render {}
 		}
 
+
 //////////////////////////////////////////////
 //======This is the GameList from left======//
 		"CGamesListPanel"
-		{
-			bgcolor="GameList"
-			render_bg {}
-		}
+		{}
 
 		"GameItem_Uninstalled"
 		{
@@ -569,6 +568,7 @@ steam.styles
 		{
 			textcolor="white"
 			font-family=basefont
+			font-size=16
 			font-weight=400
 		}
 
@@ -578,9 +578,13 @@ steam.styles
 		{
 			textcolor="White"
 			font-family=semibold
+			font-size=14
 			font-style="Uppercase"
 			bgcolor="White10"
-			render_bg{}
+			render_bg
+			{
+				0="fill(x0,y1,x1,y1+1,Black25)"
+			}
 		}
 		ListPanelColumnHeader:hover
 		{
@@ -637,23 +641,23 @@ steam.styles
 //======This controls the interior of List elements (though the fonts doesn't change on all of them.Better look at ListPanel)=====//
 		ListPanelInterior
 		{
+			font-size=16
 			textcolor="White"
-			bgcolor="none"
 		}
 
 ////////////////////////////////////////////////////////
 //======Library Categories(Recent,Software...etc)=====//
 		ListPanelSectionHeader
 		{
-			textcolor=CategoryText
-			font-style=uppercase
+			minimum-height=30
+			font-family=semibold
 			font-weight=400
-			bgcolor=CategoryBG
+			font-size="18"
+			textcolor="Focus"
 			render_bg
 			{
 				//0="fill(x0,y1-1,x1,y1,White12)"
 			}
-			minimum-height=30
 		}
 		"CDialogSettings ListPanelSectionHeader"
 		{
@@ -1486,6 +1490,7 @@ steam.styles
 			textcolor="white75"
 			selectedtextcolor="white"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 ////////////////////////
 //======Your Text=====//
@@ -1494,6 +1499,7 @@ steam.styles
 			textcolor="White50"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 ////////////////////////////////
 //======Chat History Text=====//
@@ -1502,6 +1508,7 @@ steam.styles
 			textcolor="White50"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 
 ////////////////////////////////////
@@ -1516,6 +1523,7 @@ steam.styles
 			font-family=semibold
 			font-style=uppercase
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 
 //////////////////////////////////////////////////
@@ -1527,6 +1535,7 @@ steam.styles
 			font-family=semibold
 			font-style=uppercase
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 
 ////////////////////////////////////
@@ -1537,6 +1546,7 @@ steam.styles
 			selectedtextcolor="White"
 			font-style=underline
 			selectedbgColor="Focus"
+			font-size=16
 		}
 /////////////////////////////////////////////
 //======Everybody's Name while in-game=====//
@@ -1545,12 +1555,14 @@ steam.styles
 			textcolor="Friends.InGameColor"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 		friends_chat_self
 		{
 			textcolor="Friends.OnlineColor"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 ////////////////////////////////////////////
 //======Everybody's Name while online=====//
@@ -1559,6 +1571,7 @@ steam.styles
 			textcolor="Friends.OnlineColor"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 
 ////////////////////////////////////////////////////////////////////////
@@ -1568,6 +1581,7 @@ steam.styles
 			textcolor="white"
 			selectedtextcolor="White"
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 /////////////////////////////////////////////////////
 //======"Never tell your password to...." Text=====//
@@ -1578,6 +1592,7 @@ steam.styles
 			font-family=semibold
 			font-style=uppercase
 			selectedbgcolor="Focus"
+			font-size=16
 		}
 
 //////////////// Used in friends tooltip and friends list for overriding regular styles with custom colors ////////////////
