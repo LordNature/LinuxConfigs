@@ -1,0 +1,34 @@
+{
+    "layout": "splith",
+    "floating": "auto_off",
+    "percent": 0.1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Steam - Friends",
+            "percent": 0.1,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Steam$",
+                    "instance": "^Steam$",
+                    "title": "^Friends$"
+                }
+            ]
+        },
+        {
+            "border": "none",
+            "name": "Steam",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Steam$",
+                    "instance": "^Steam$",
+                    "title": "^Steam$"
+                }
+            ]
+        }
+    ]
+}
